@@ -52,27 +52,29 @@ public class Main {
             {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Would you like to continue to the interactive portion?");
-                String someString = scanner.next();
+                String selection = scanner.next();
 
-                //boolean Question1 = true;
-                //System.out.println(Question1);
-
-                //answerQuestion(String answer) {
                 String msg = "";
-                switch (someString) {
+                switch (selection) {
                     case "y":
                     case "Y":
-                        msg = "Take me to the next section ";
+                        msg = "You have chosen to go to the next section ";
                         break;
                     case "n":
                     case "N":
                         msg = "Thanks anyway ";
-                        break;
-                    default:
-                        msg = "You chose not to continue ";
-                        break;
+                        System.out.println("Please return later to complete the survey. You chose not to continue. Thank you. ");
+                        return;
                 }
                 System.out.println(msg);
+
+                {
+                    System.out.println("");
+                    System.out.println("Here is a series of random questions to gather some user info:");
+                    System.out.println("");
+                }
+
+
                 {
                     Scanner userInput = new Scanner(System.in);
                     System.out.println("What is your lucky number? ");
@@ -88,22 +90,59 @@ public class Main {
                 }
                 System.out.println("");
                 System.out.println("Here are your LUCKY lottery numbers:");
-                    Random random = new Random();
-                    int aa = random.nextInt(75);
+                Random random = new Random();
+                int aa = random.nextInt(75);
 
 
-                int a = random.nextInt(65) +1;
-                int b = random.nextInt(65) +1;
-                int c = random.nextInt(65) +1;
-                int d = random.nextInt(65) +1;
-                int e = random.nextInt(65) +1;
-                    System.out.printf("This is your Magic Ball first %s!\n", aa);
-                    System.out.println(a);
-                    System.out.println(b);
-                    System.out.println(c);
-                    System.out.println(d);
-                    System.out.println(e);
+                int a = random.nextInt(65) + 1;
+                int b = random.nextInt(65) + 1;
+                int c = random.nextInt(65) + 1;
+                int d = random.nextInt(65) + 1;
+                int e = random.nextInt(65) + 1;
+                System.out.printf("Your Magic Ball Is %s!\n", aa);
+                System.out.println(a);
+                System.out.println(b);
+                System.out.println(c);
+                System.out.println(d);
+                System.out.println(e);
 
+                {
+
+                    //System.out.println("Would you like to generate another set of numbers? ");
+                    //Scanner scanner = new Scanner(System.in);
+                    System.out.println("Would you like to generate another set of numbers? ");
+                    String nextselection = scanner.next();
+
+                    String amsg = "";
+                    switch (nextselection) {
+                        case "y":
+                        case "Y":
+                            //amsg = "You have chosen to go to the next section ";
+                     int la = random.nextInt(75);
+
+
+                            int lal = random.nextInt(65) + 1;
+                            int ab = random.nextInt(65) + 1;
+                            int ac = random.nextInt(65) + 1;
+                            int ad = random.nextInt(65) + 1;
+                            int ae = random.nextInt(65) + 1;
+                            System.out.printf("Your Magic Ball Is %s!\n", aa);
+                            System.out.println(lal);
+                            System.out.println(ab);
+                            System.out.println(ac);
+                            System.out.println(ad);
+                            System.out.println(ae);
+
+                            break;
+                        case "n":
+                        case "N":
+                            //amsg = "Thanks anyway ";
+                            System.out.println("Thank you. ");
+                            return;
+
+                    }
+                    System.out.println("");
+                }
 
             }
         }
